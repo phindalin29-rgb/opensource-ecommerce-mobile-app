@@ -53,7 +53,7 @@ class _ImageCarouselState extends State<ImageCarousel> {
     _autoPlayTimer?.cancel();
     _currentPage = widget.images.isEmpty
         ? 0
-        : (_currentPage.clamp(0, widget.images.length - 1) as int);
+        : _currentPage.clamp(0, widget.images.length - 1);
     _startAutoPlay();
     _cacheBannerAspectRatios();
   }
@@ -125,7 +125,7 @@ class _ImageCarouselState extends State<ImageCarousel> {
 
   double _currentAspectRatio() {
     if (widget.images.isEmpty) return _fallbackAspectRatio;
-    final safeIndex = _currentPage.clamp(0, widget.images.length - 1) as int;
+    final safeIndex = _currentPage.clamp(0, widget.images.length - 1);
     final currentBanner = widget.images[safeIndex];
     final aspectRatio = _aspectRatios[_bannerUrl(currentBanner)];
     if (aspectRatio == null || !aspectRatio.isFinite || aspectRatio <= 0) {
