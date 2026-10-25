@@ -196,7 +196,7 @@ Replace "GoogleService-Info.plist".
 
 ## API Documentation
 
-For the API Documentation, please go through - <https://api-docs.bagisto.com/api/graphql-api/introduction.html>
+
 
 ## Usage
 
